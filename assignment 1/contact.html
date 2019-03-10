@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contact</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script>
+    localStorage.setItem("Creator","Tuan Anh")
+    localStorage.setItem("Date created","10/03/2019")
+    document.getElementById("Date created").innerHTML = localStorage.getItem("Date created");
+    document.getElementById("Creator").innerHTML = localStorage.getItem("Creator");
+  </script>
+</head>
+<body>
+    
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">BBQ restaurant</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>           
+            <li><a href="introduction.html">Introduction</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="food.html">Food</a></li>
+                  <li><a href="drink.html">Drinks</a></li>
+                  <li><a href="dessert.html">Dessert</a></li>
+                </ul>
+              </li>
+            <li><a href="recruitment.html">Recruitment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <form class="navbar-form navbar-left">
+              <div class="form-group">
+                <input type="textbox" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Search</button>
+            Time open : 10a.m to 10p.m
+          </form>
+        </div>
+      </nav>
+  <h1>Contact</h1>
+  Please contact us by type these below information or info@bbqrestaurant.com.vn
+  <form name="contactForm" onsubmit="return validate()" >
+  <div class="form-group">
+    <label for="usr">Full Name :</label>
+    <input type="text" name="name"  required>
+  </div>
+  <div class="form-group">
+    <label for="Phone">Phone number(10 numbers) :</label>
+    <input type="text" name="phoneNumber"  required>
+  </div>
+  <div class="form-group">
+    <label for="comment">Comment:</label>
+  <div>
+    <textarea name="" id="" cols="50" rows="5" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-default">Send</button>
+  <form>
+  
+</body>
+</html>
+<script>
+  function validate(){
+    var name = document.forms["contactForm"]["name"].value;
+    if (name==""){
+      alert("Please enter the name");
+      return false;
+    }
+    var phoneNumber = document.forms["contactForm"]["phoneNumber"].value;
+    if (isNaN(phoneNumber)){
+      alert("Invalid phone number");
+      return false;
+    }
+  }
+
+</script>
